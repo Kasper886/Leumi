@@ -209,5 +209,3 @@ terraform destroy -auto-approve
 https://user-images.githubusercontent.com/51818001/142759135-cbc61a86-0b47-4d56-8394-f1b3737389b5.mp4
 
 ![screen1](https://user-images.githubusercontent.com/51818001/141676063-6bab5a63-558c-4968-9440-7f3072184b88.png)
-
-![ECR-image](https://user-images.githubusercontent.com/51818001/141675918-eabf9fec-90fa-4225-a829-bb447a116e6b.png)
