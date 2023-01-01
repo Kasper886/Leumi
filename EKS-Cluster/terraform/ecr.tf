@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "PythonApp" {
+resource "aws_ecr_repository" "pythonapp" {
   name                 = var.repo-name
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
