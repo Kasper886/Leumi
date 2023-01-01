@@ -197,16 +197,12 @@ kubectl delete -f guestbook-controller.yaml
 ```
 kubectl delete service guestbook redis-master redis-slave
 ```
-#### 8. To destroy EKS cluster
-Destroy ECR repo
+#### 8. To destroy EKS cluster and ECR repo run:
+
 ```
 terraform destroy -auto-approve
 ```
-Destroy EKS cluster
-```
-cd ..
-terraform destroy -auto-approve
-```
+
 
 ## Demo
 
