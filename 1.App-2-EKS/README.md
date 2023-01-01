@@ -121,16 +121,18 @@ su - ${USER}
 ```
 
 ### 6. Install Jenkins from Docker
+
+##1. Run Jenkins from Docker
 ```
 docker run -u 0 -d -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home jenkins/jenkins:lts
 ```
-To get the password to unlodk Jenkins at the frirst launch run:
+To get the password to unlock Jenkins at the frirst launch run:
 ```
 sudo docker exec ${CONTAINER_ID or CONTAINER_NAME} cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 where CONTAINER_ID or CONTAINER_NAME - your running container name
 
-Also you need the next plugins:
+##2. Also you need the next plugins:
 - CloudBees AWS credentials;
 - Kubernetes Continuous Deploy (v.1.0.0), you can download [this file](https://updates.jenkins.io/download/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi) and upload it in advanced settings in Jenkins plugin management section;
 - Docker;
@@ -139,7 +141,7 @@ Also you need the next plugins:
 
 ![plugins3](https://user-images.githubusercontent.com/51818001/142757989-6ffa7c12-98c3-4562-b3fa-962acd39ece6.png)
 
-5. Credentials settings.
+##3. Credentials settings.
 Go to Jenkins -> Manage Jenkins -> Global credentials section and add AWS credentials with ID ecr
 
 ![ECR-cred](https://user-images.githubusercontent.com/51818001/141673986-8f615e47-3bf5-4748-9466-5f669bf4e481.png)
@@ -163,15 +165,15 @@ Also, run to get access for Jenkins to your EKS cluster
 kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
 ```
 
-6. Make sure you create Maven3 variable under Global tool configuration.
+#4. Make sure you create Maven3 variable under Global tool configuration.
 
 ![maven3](https://user-images.githubusercontent.com/51818001/141674371-a22998f4-0c63-4b0e-b928-9e581c30f14f.png)
 
-7. Create new pipeline in Jenkins and copy Jenkinsfile there.
+#5. Create new pipeline in Jenkins and copy Jenkinsfile there.
 
 Build your pipeline.
 
-8. Run the following command to get access from your browser:
+#6. Run the following command to get access from your browser:
 ```
 kubectl get svc
 ```
@@ -182,7 +184,7 @@ http://a50fec56374e843a6afbf0f96488e800-1553267577.us-east-1.elb.amazonaws.com:3
 
 http in url is required 
 
-9. To delete the services and deployments without cluster destroying run:
+##7. To delete the services and deployments without cluster destroying run:
 ```
 git clone https://github.com/Kasper886/guest-book.git
 cd guest-book
@@ -195,7 +197,7 @@ kubectl delete -f guestbook-controller.yaml
 ```
 kubectl delete service guestbook redis-master redis-slave
 ```
-10. To destroy EKS cluster
+##8. To destroy EKS cluster
 Destroy ECR repo
 ```
 terraform destroy -auto-approve
