@@ -31,10 +31,10 @@ You should have terraform on board and AWS credentials to get access to your AWS
 
 ### 1. Clone repository and start the Terraform script
 ```
-git clone https://github.com/Kasper886/WaveProject.git
+git clone https://github.com/Kasper886/Leumi.git
 ```
 ```
-cd WaveProject/EKS-Cluster/
+cd Leumi/1.App-2-EKS/
 ```
 Install Terraform if you don't have it.<br/>
 If your user is not a root user, ask your admin to add user to sudoers:
