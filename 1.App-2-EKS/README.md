@@ -138,6 +138,14 @@ sudo docker exec ${CONTAINER_ID or CONTAINER_NAME} cat /var/jenkins_home/secrets
 ```
 where CONTAINER_ID or CONTAINER_NAME - your running container name
 
+You can get an error with Docker: Got permission denied while trying to connect to the Docker. So, run:
+```
+usermod -aG docker jenkins
+usermod -aG root jenkins
+chmod 777 /var/run/docker.sock
+```
+It's not safety, but then you can return permissions to 744 or 755
+
 #### 2. Also you need the next plugins:
 - CloudBees AWS credentials;
 - Kubernetes Continuous Deploy (v.1.0.0), you can download [this file](https://updates.jenkins.io/download/plugins/kubernetes-cd/1.0.0/kubernetes-cd.hpi) and upload it in advanced settings in Jenkins plugin management section;
