@@ -5,6 +5,10 @@ resource "aws_vpc" "test-spoke-vpc" {
   }
 }
 
+# Fetch AZs in the current region
+data "aws_availability_zones" "available" {
+}
+
 # Create public subnet
 resource "aws_subnet" "public" {
   cidr_block              = var.aws_vpc_cidr
