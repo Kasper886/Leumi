@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "my_webserver" {
-  ami                    = "ami-03a71cec707bfc3d7"
+  ami                    = "ami-07ab3281411d31d04"
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
   user_data = "${file("user_data.sh")}"
