@@ -117,8 +117,8 @@ terraform destroy -auto-approve
 cd ../..
 ```
 ```
-chmod +x docker.sh
-./docker.sh
+chmod +x bash/docker.sh
+bash/docker.sh
 ```
 To use Docker without sudo, run:
 ```
