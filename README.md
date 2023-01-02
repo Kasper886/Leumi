@@ -75,6 +75,9 @@ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxx
 export AWS_DEFAULT_REGION=us-east-1
 ```
 ```
+cd EKS-Cluster/terraform/
+```
+```
 terraform init
 ```
 ```
@@ -111,8 +114,11 @@ terraform destroy -auto-approve
 
 ### 5. Install Docker if you don't have it:
 ```
-chmod +x docker.sh
-./docker.sh
+cd ../..
+```
+```
+chmod +x bash/docker.sh
+bash/docker.sh
 ```
 To use Docker without sudo, run:
 ```
@@ -131,6 +137,14 @@ To get the password to unlock Jenkins at the frirst launch run:
 sudo docker exec ${CONTAINER_ID or CONTAINER_NAME} cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 where CONTAINER_ID or CONTAINER_NAME - your running container name
+
+You can get an error with Docker: Got permission denied while trying to connect to the Docker. So, run:
+```
+usermod -aG docker jenkins
+usermod -aG root jenkins
+chmod 777 /var/run/docker.sock
+```
+It's not safety, but then you can return permissions to 744 or 755
 
 #### 2. Also you need the next plugins:
 - CloudBees AWS credentials;
@@ -152,7 +166,7 @@ aws eks update-kubeconfig --name eks --region us-east-1
 ```
 and
 ```
-cat /home/wave/.kube/config
+cat /home/ubuntu/.kube/config
 ```
 Copy result of this command and return to Jenkins credentials section, then create Kubernetes credentials and choose Kubeconfig Enter directly
 
