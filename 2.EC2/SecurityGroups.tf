@@ -1,7 +1,7 @@
 resource "aws_security_group" "my_webserver" {
   name        = "WebServer Security Group"
   description = "Web Security Group"
-  vpc_id      = aws_default_vpc.default.id # This need to be added since AWS Provider v4.29+ to set VPC id
+  vpc_id      = aws_vpc.test-spoke-vpc.id
 
   ingress {
     from_port   = 80
