@@ -7,3 +7,13 @@ variable "aws_region" {
 variable "aws_vpc_cidr" {
   default = "10.181.242.0/24"
 }
+
+variable "az_count" {
+  default     = "1"
+  description = "number of availability zones in above region"
+}
+
+variable "azs" {
+    type = list
+    default = ["1a"]
+}
