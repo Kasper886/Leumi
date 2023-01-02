@@ -75,6 +75,9 @@ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxx
 export AWS_DEFAULT_REGION=us-east-1
 ```
 ```
+cd EKS-Cluster/terraform/
+```
+```
 terraform init
 ```
 ```
