@@ -21,7 +21,8 @@ node {
     
     stage('Docker Build') {
         docker.withRegistry(ECRURL, ECRCRED) {
-           docker.build("${IMAGE}:v${VERSION}").push()
+           /*docker.build("${IMAGE}:v${VERSION}").push()*/
+            docker.build("${IMAGE}:v1").push()
         }
     }
     
