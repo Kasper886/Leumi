@@ -158,7 +158,7 @@ aws eks update-kubeconfig --name eks --region us-east-1
 ```
 and
 ```
-cat /home/wave/.kube/config
+cat /home/ubuntu/.kube/config
 ```
 Copy result of this command and return to Jenkins credentials section, then create Kubernetes credentials and choose Kubeconfig Enter directly
 
