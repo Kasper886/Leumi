@@ -9,7 +9,7 @@ resource "aws_security_group" "my_webserver" {
       from_port   = ingress.value
       to_port     = ingress.value
       protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["77.137.75.169/32"]
     }
   }
 
