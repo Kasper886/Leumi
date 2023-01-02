@@ -114,6 +114,9 @@ terraform destroy -auto-approve
 
 ### 5. Install Docker if you don't have it:
 ```
+cd ../..
+```
+```
 chmod +x docker.sh
 ./docker.sh
 ```
