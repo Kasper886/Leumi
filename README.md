@@ -218,6 +218,9 @@ terraform destroy -auto-approve
 ```
 
 ## AWS EC2 and NLB deplyment by terraform
+
+The system has an access from IP 91.231.246.50 (confirmed in AWS security groups) as required, so to have an access from internet from any host the networking load balancer was deployed.
+
 ```
 cd 2.EC2
 ```
