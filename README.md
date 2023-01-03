@@ -1,4 +1,4 @@
-# AWS EKS cluster creation by Terraform and application deployment
+# AWS EKS cluster creation by Terraform and application deployment and EC2 with AWS NLB creation
 This repo demonstrates how to create AWS EKS cluster by means of IaaC Terraform and assign network resources to it. Below you can find the diagram that illustrates created cluster.
 
 ![Image alt](https://github.com/Kasper886/WaveProject/blob/master/EKS-Cluster/files/diagram3.png)
@@ -217,6 +217,26 @@ kubectl delete service guestbook redis-master redis-slave
 terraform destroy -auto-approve
 ```
 
+## AWS EC2 and NLB deplyment by terraform
+```
+cd 2.EC2
+```
+You should already have Terraform and AWS credentials configured from previous steps. So you can run terraform deployment
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply -auto-approve
+```
+I don't know why but I couldn't attach EC2 instance to NLB target group. So, you should do it manually in AWS console (see demo)
+
+When you don't need the rescources anymore, you can delete them:
+```
+terraform destroy -auto-approve
+```
 
 ## Demo
 
@@ -225,3 +245,5 @@ https://user-images.githubusercontent.com/51818001/210236446-81892618-e75c-47e7-
 https://user-images.githubusercontent.com/51818001/210236508-b0a0b751-bbdc-4755-bbbd-823caf6c8674.mp4
 
 ![screen1](https://user-images.githubusercontent.com/51818001/141676063-6bab5a63-558c-4968-9440-7f3072184b88.png)
+
+https://user-images.githubusercontent.com/51818001/210332707-1262f458-a6bb-4f9a-a584-50959865c67b.mp4
