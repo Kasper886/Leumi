@@ -17,3 +17,7 @@ variable "azs" {
     type = list
     default = ["1a"]
 }
+
+variable "health_check_path" {
+  default = "/"
+}

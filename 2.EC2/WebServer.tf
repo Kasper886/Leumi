@@ -18,7 +18,7 @@ resource "aws_instance" "my_webserver" {
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
   associate_public_ip_address = true
   user_data              = "${file("user_data.sh")}"
-  
+    
   tags = {
     Name  = "Web Server Build by Terraform"
     Owner = "Alex Largman"
